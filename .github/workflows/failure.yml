@@ -19,6 +19,20 @@ jobs:
         if: ${{ failure() }}
         run: echo "Build failed. Sending notification..."
         
+      - name: Run build
+        run: |
+          echo "Building project..."
+          # Simulate a build success for demonstration purposes
+          exit 0
+ 
+      - name: Send failure notification again
+        if: ${{ failure() }}
+        run: echo "Build failed. Sending notification..."
+        
+      - name: Send success notification
+        if: ${{ success() }}
+        run: echo "Build success. Sending notification..."
+        
       - name: Always
         if: ${{ always() }}
         run: echo "Always..."
