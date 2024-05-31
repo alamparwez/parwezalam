@@ -26,6 +26,8 @@ jobs:
       - run: echo ${{ inputs.text }}
       - run: echo ${{ github.event.inputs.text }}
       - run: echo ${{ github.actor }}
+      - name: print actor
+        run: echo ${{ github.actor }}
       - run: echo 'Hi ${{ env.firstName }}'
       - run: echo 'website - ${{ env.website }}'
       - run: echo ${{ job.status}}
