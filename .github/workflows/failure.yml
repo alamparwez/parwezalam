@@ -20,6 +20,7 @@ jobs:
         run: echo "Build failed. Sending notification..."
         
       - name: Run build
+        if: ${{ failure() }}
         run: |
           echo "Building project..."
           # Simulate a build success for demonstration purposes
