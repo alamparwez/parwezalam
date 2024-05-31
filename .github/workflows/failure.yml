@@ -18,3 +18,7 @@ jobs:
       - name: Send failure notification
         if: ${{ failure() }}
         run: echo "Build failed. Sending notification..."
+        
+      - name: Always
+        if: ${{ always() }}
+        run: echo "Always..."
