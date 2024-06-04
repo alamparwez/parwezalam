@@ -1,0 +1,22 @@
+name: Example Workflow
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build project
+        run: |
+          mkdir -p output
+          echo "This is a build output file" > output/build.txt
+
+      - name: Upload build output
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-output
+          path: output/
