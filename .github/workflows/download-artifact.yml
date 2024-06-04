@@ -15,7 +15,11 @@ jobs:
           mkdir -p output
           echo "This is a build output file" > output/build.txt
 
-
+      - name: Upload build output
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-output
+          path: output/
           
       - name: Download build output
         uses: actions/download-artifact@v2
